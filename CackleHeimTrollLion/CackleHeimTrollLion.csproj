@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ModFrame</RootNamespace>
-    <AssemblyName>ModFrame</AssemblyName>
+    <AssemblyName>CackleHeimTrollLion</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <LangVersion>9</LangVersion>
@@ -67,6 +67,12 @@
     <Reference Include="BepInEx">
       <HintPath>$(GamePath)\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
+    <Reference Include="CreatureManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Libs\CreatureManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ServerSync, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Libs\ServerSync.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -79,8 +85,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ModCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Libs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
