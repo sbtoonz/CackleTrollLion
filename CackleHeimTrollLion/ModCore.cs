@@ -36,7 +36,7 @@ namespace CackleHeimTrollLion
             LionTroll.Drops["Wood"].MultiplyDropByLevel = false;
             LionTroll.ConfigurationEnabled = true;
             
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll.Prefab);
+            
         }
 
         [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Start))]
@@ -154,7 +154,16 @@ namespace CackleHeimTrollLion
                 var hum = __instance.GetPrefab("Lion_Troll").GetComponent<Humanoid>();
                 hum.m_hitEffects.m_effectPrefabs = troll.GetComponent<Humanoid>().m_hitEffects.m_effectPrefabs;
                 hum.m_critHitEffects.m_effectPrefabs = troll.GetComponent<Humanoid>().m_critHitEffects.m_effectPrefabs;
-                hum.m_deathEffects.m_effectPrefabs[2] = troll.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[2];
+                }
+        }
+
+
+        [HarmonyPatch(typeof(ZoneSystem), nameof(ZoneSystem.Start))]
+        public class FixupmatsPatch
+        {
+            public static void Postfix()
+            {
+                MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll!.Prefab);
             }
         }
     }
