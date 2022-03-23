@@ -150,8 +150,10 @@ namespace CackleHeimTrollLion
             public static void Postfix(ZNetScene __instance)
             {
                 GameObject troll = __instance.GetPrefab("Troll");
-                var hum = LionTroll.Prefab.gameObject.GetComponent<Humanoid>();
+                var hum = __instance.GetPrefab("Lion_Troll").GetComponent<Humanoid>();
                 hum.m_hitEffects.m_effectPrefabs = troll.GetComponent<Humanoid>().m_hitEffects.m_effectPrefabs;
+                hum.m_critHitEffects.m_effectPrefabs = troll.GetComponent<Humanoid>().m_critHitEffects.m_effectPrefabs;
+                hum.m_deathEffects.m_effectPrefabs[2] = troll.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[2];
             }
         }
     }

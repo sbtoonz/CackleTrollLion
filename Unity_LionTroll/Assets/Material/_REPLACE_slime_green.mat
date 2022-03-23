@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_green
+  m_Name: _REPLACE_slime_green
   m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_FROND _ALPHATEST_ON _EMISSION
   m_LightmapFlags: 0
