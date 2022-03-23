@@ -492,7 +492,10 @@ MonoBehaviour:
   m_backTool: {fileID: 0}
   m_backAtgeir: {fileID: 0}
   m_clothColliders: []
-  m_models: []
+  m_models:
+  - m_mesh: {fileID: 1701924653217270626, guid: 8594a569846d84942b23b20c6908763d,
+      type: 3}
+    m_baseMaterial: {fileID: 2100000, guid: 4d046598737041148a037bf24ff5a509, type: 2}
   m_isPlayer: 0
   m_useAllTrails: 0
 --- !u!114 &114206866715262776
