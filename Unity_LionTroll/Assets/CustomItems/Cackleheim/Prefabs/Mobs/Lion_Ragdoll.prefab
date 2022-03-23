@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 1578695569, guid: 1372f77f4f96f0d4d96eabcb8f17fd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_velMultiplier: 1.5
+  m_velMultiplier: 2.5
   m_ttl: 4
   m_mainModel: {fileID: 0}
   m_removeEffect:
@@ -1491,7 +1491,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02550905, y: 0.02499841, z: 0.01550905}
-  m_Center: {x: 0, y: -0.011669618, z: -0.0041723344}
+  m_Center: {x: 0, y: -0.011669618, z: -0.0025}
 --- !u!54 &1023717167905913069
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -397,30 +397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2100145416215536672, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2547698299460162972, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
         type: 3}
       propertyPath: m_Name
       value: Lion_Ragdoll
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120828999372149379, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
-        type: 3}
-      propertyPath: m_Mass
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120828999372149379, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9120828999372149379, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9132958983327502266, guid: 8211305ed3da6a84cbc5ea9720cb8bdf,
         type: 3}
