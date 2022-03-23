@@ -38,7 +38,8 @@ namespace CackleHeimTrollLion
 
         }
 
-        [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Awake))]
+        [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Start))]
+        [HarmonyPriority(Priority.Last)]
         public static class RaidPatch
         {
 
@@ -49,7 +50,6 @@ namespace CackleHeimTrollLion
                 _event.m_biome = Heightmap.Biome.Meadows;
                 _event.m_duration = 60;
                 _event.m_name = "LionTroll";
-                _event.m_pos = Player.m_localPlayer.transform.position;
                 _event.m_random = true;
                 _event.m_startMessage = "The Lion Trolls have stirred!";
                 _event.m_spawn = new List<SpawnSystem.SpawnData>
@@ -140,11 +140,6 @@ namespace CackleHeimTrollLion
                         m_biomeArea = Heightmap.BiomeArea.Everything,
                     },
                 };
-                if (__instance.m_events.Contains(_event))
-                {
-                    __instance.SetRandomEventByName("LionTroll", Player.m_localPlayer.transform.position);
-                    return;
-                }
                 __instance.m_events.Add(_event);
             }
         }
@@ -156,9 +151,7 @@ namespace CackleHeimTrollLion
             {
                 GameObject troll = __instance.GetPrefab("Troll");
                 var hum = LionTroll.Prefab.gameObject.GetComponent<Humanoid>();
-                hum.m_deathEffects.m_effectPrefabs[0] = troll.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[0];
-                hum.m_deathEffects.m_effectPrefabs[2] = troll.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[2];
-
+                hum.m_hitEffects.m_effectPrefabs = troll.GetComponent<Humanoid>().m_hitEffects.m_effectPrefabs;
             }
         }
     }
