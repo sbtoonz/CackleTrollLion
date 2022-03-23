@@ -225,8 +225,8 @@ MonoBehaviour:
       m_enabled: 1
       m_variant: -1
       m_attach: 0
-      m_inheritParentRotation: 0
-      m_inheritParentScale: 0
+      m_inheritParentRotation: 1
+      m_inheritParentScale: 1
       m_randomRotation: 0
       m_scale: 0
       m_childTransform: 
