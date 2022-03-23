@@ -163,7 +163,7 @@ namespace CackleHeimTrollLion
         {
             public static void Postfix()
             {
-                MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll!.Prefab);
+                MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll!.Prefab.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[2].m_prefab);
             }
         }
     }
