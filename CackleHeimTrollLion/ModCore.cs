@@ -13,8 +13,8 @@ namespace CackleHeimTrollLion
         internal const string ModName = "CackleHeimLionTroll";
         internal const string ModVersion = "0.0.1";
         private const string ModGUID = "come.cacklehieim.liontroll";
-        private static Harmony harmony = null!;
-        private static Creature LionTroll;
+        private static Harmony? harmony = null!;
+        private static Creature? LionTroll;
 
         public void Awake()
         {
@@ -35,7 +35,8 @@ namespace CackleHeimTrollLion
             LionTroll.Drops["Wood"].DropChance = 100f;
             LionTroll.Drops["Wood"].MultiplyDropByLevel = false;
             LionTroll.ConfigurationEnabled = true;
-
+            
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll.Prefab);
         }
 
         [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Start))]

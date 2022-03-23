@@ -5,7 +5,7 @@ namespace CackleHeimTrollLion
 {
     static class MaterialReplacer
     {
-        static Dictionary<string, Material> originalMaterials;
+        static Dictionary<string, Material>? originalMaterials;
 
         public static void GetAllMaterials()
         {
@@ -29,7 +29,7 @@ namespace CackleHeimTrollLion
                     {
                         var matName = renderer.material.name.Replace(" (Instance)", string.Empty).Replace("_REPLACE_", "");
 
-                        if (originalMaterials.ContainsKey(matName))
+                        if (originalMaterials!.ContainsKey(matName))
                         {
                             renderer.material = originalMaterials[matName];
                         }
