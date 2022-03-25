@@ -164,6 +164,10 @@ namespace CackleHeimTrollLion
             public static void Postfix()
             {
                 MaterialReplacer.ReplaceAllMaterialsWithOriginal(LionTroll!.Prefab.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[2].m_prefab);
+                var mat = LionTroll.Prefab.transform.Find("Visual/Lion_Troll").gameObject.GetComponent<SkinnedMeshRenderer>();
+                mat.sharedMaterial.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial.shader;
+                mat.material.shader =ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().material.shader;
+
             }
         }
     }
