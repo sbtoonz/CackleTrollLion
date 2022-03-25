@@ -167,6 +167,10 @@ namespace CackleHeimTrollLion
                 var mat = LionTroll.Prefab.transform.Find("Visual/Lion_Troll").gameObject.GetComponent<SkinnedMeshRenderer>();
                 mat.sharedMaterial.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial.shader;
                 mat.material.shader =ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().material.shader;
+                var ragdoll = LionTroll.Prefab.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[1].m_prefab;
+                var ragmat = ragdoll.transform.Find("Visual/Lion_Troll").GetComponent<SkinnedMeshRenderer>();
+                ragmat.sharedMaterial.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial.shader;
+                ragmat.material.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().material.shader;
 
             }
         }
