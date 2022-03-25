@@ -1046,8 +1046,8 @@ MonoBehaviour:
   m_baseEnableObject: {fileID: 0}
   m_levelSetups:
   - m_scale: 1
-    m_hue: -0.14
-    m_saturation: 0.1
+    m_hue: 1
+    m_saturation: 1
     m_value: 0
     m_enableObject: {fileID: 0}
   - m_scale: 1
@@ -1058,17 +1058,17 @@ MonoBehaviour:
   - m_scale: 1
     m_hue: 1.35
     m_saturation: 0.89
-    m_value: 2
+    m_value: 0.75
     m_enableObject: {fileID: 0}
-  - m_scale: 1
-    m_hue: 2
-    m_saturation: 0.2
+  - m_scale: 0.8
+    m_hue: 1.25
+    m_saturation: 0.89
     m_value: 1
     m_enableObject: {fileID: 0}
   - m_scale: 1
     m_hue: 0.44
     m_saturation: 0.2
-    m_value: 3
+    m_value: 1
     m_enableObject: {fileID: 0}
 --- !u!1 &1888800084834822104
 GameObject:
