@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 940515449
+CRC: 2567961974
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 55498362530a38a43390c9cdcda1d885
+    Hash: 5c76612085b8182ee50b0738e8da9c6a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 71c27e217b994c7b0d79323f1fb5c6b4
@@ -102,4 +102,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/CustomItems/Cackleheim/Prefabs/Mobs/Lion_Troll.prefab
+- Assets/CustomItems/Cackleheim/Prefabs/Mobs/Lion_Ragdoll.prefab
 Dependencies: []

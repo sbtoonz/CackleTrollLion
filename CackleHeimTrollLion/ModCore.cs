@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using BepInEx;
 using CreatureManager;
@@ -15,6 +17,7 @@ namespace CackleHeimTrollLion
         private const string ModGUID = "come.cacklehieim.liontroll";
         private static Harmony? harmony = null!;
         private static Creature? LionTroll;
+        internal static GameObject? RagDoll;
 
         public void Awake()
         {
@@ -35,8 +38,18 @@ namespace CackleHeimTrollLion
             LionTroll.Drops["Wood"].DropChance = 100f;
             LionTroll.Drops["Wood"].MultiplyDropByLevel = false;
             LionTroll.ConfigurationEnabled = true;
-            
-            
+
+            AssetBundle assetBundle = LoadAssetBundle("liontroll");
+            RagDoll = assetBundle.LoadAsset<GameObject>("Lion_Ragdoll");
+
+        }
+        
+        internal static AssetBundle? LoadAssetBundle(string bundleName)
+        {
+            var resource = typeof(CackleHeimTrollMod).Assembly.GetManifestResourceNames().Single
+                (s => s.EndsWith(bundleName));
+            using var stream = typeof(CackleHeimTrollMod).Assembly.GetManifestResourceStream(resource);
+            return AssetBundle.LoadFromStream(stream);
         }
 
         [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Start))]
@@ -167,6 +180,10 @@ namespace CackleHeimTrollLion
                 var mat = LionTroll.Prefab.transform.Find("Visual/Lion_Troll").gameObject.GetComponent<SkinnedMeshRenderer>();
                 mat.sharedMaterial.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial.shader;
                 mat.material.shader =ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().material.shader;
+                var ragmatshared = RagDoll.transform.Find("Lion_Troll/Visual/Lion_Troll").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial;
+                var ragmat = RagDoll.transform.Find("Lion_Troll/Visual/Lion_Troll").gameObject.GetComponent<SkinnedMeshRenderer>().material;
+                ragmatshared.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().sharedMaterial.shader;
+                ragmat.shader = ZNetScene.instance.GetPrefab("Troll").transform.Find("Visual/Body").gameObject.GetComponent<SkinnedMeshRenderer>().material.shader;
             }
         }
     }
