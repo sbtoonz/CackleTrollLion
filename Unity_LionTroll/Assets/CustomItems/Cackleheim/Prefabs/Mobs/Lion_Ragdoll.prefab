@@ -2444,6 +2444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5995147639958058615}
+  - component: {fileID: 4843579694910947262}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -2469,6 +2470,41 @@ Transform:
   m_Father: {fileID: 9098209580920791497}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4843579694910947262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434918250087291341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1094038755, guid: 1372f77f4f96f0d4d96eabcb8f17fd8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mainRender: {fileID: 8485569169521496106}
+  m_baseEnableObject: {fileID: 2864744592089286024}
+  m_levelSetups:
+  - m_scale: 1
+    m_hue: 1
+    m_saturation: 1
+    m_value: 0
+    m_enableObject: {fileID: 0}
+  - m_scale: 1
+    m_hue: 1
+    m_saturation: 1
+    m_value: 0
+    m_enableObject: {fileID: 0}
+  - m_scale: 1
+    m_hue: 0.35
+    m_saturation: 0.89
+    m_value: 0.75
+    m_enableObject: {fileID: 0}
+  - m_scale: 1
+    m_hue: 1
+    m_saturation: 1
+    m_value: 1
+    m_enableObject: {fileID: 0}
 --- !u!1 &7620052214754543484
 GameObject:
   m_ObjectHideFlags: 0

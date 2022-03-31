@@ -39,18 +39,11 @@ namespace CackleHeimTrollLion
             LionTroll.Drops["Wood"].MultiplyDropByLevel = false;
             LionTroll.ConfigurationEnabled = true;
 
-            AssetBundle assetBundle = LoadAssetBundle("liontroll");
-            RagDoll = assetBundle.LoadAsset<GameObject>("Lion_Ragdoll");
+            RagDoll = LionTroll.Prefab.GetComponent<Humanoid>().m_deathEffects.m_effectPrefabs[1].m_prefab;
+            Debug.LogWarning(RagDoll.name);
 
         }
         
-        internal static AssetBundle? LoadAssetBundle(string bundleName)
-        {
-            var resource = typeof(CackleHeimTrollMod).Assembly.GetManifestResourceNames().Single
-                (s => s.EndsWith(bundleName));
-            using var stream = typeof(CackleHeimTrollMod).Assembly.GetManifestResourceStream(resource);
-            return AssetBundle.LoadFromStream(stream);
-        }
 
         [HarmonyPatch(typeof(RandEventSystem), nameof(RandEventSystem.Start))]
         [HarmonyPriority(Priority.Last)]
